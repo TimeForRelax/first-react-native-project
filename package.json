@@ -6,12 +6,33 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
+    "start": "react-native start --reset-cache",
+    "restart": "cd ios && pod install --verbose && cd .. && react-native start --reset-cache",
+    "test": "jest",
+    "reinstall": "rm -rf node_modules android/build android/app/build/intermediates ios/build ios/Pods ios/Podfile.lock && watchman watch-del-all && npm i install && cd ios && pod install --verbose && cd .."
   },
   "dependencies": {
+    "@react-native-masked-view/masked-view": "^0.2.9",
+    "@react-navigation/drawer": "^6.6.15",
+    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.9.26",
+    "install": "^0.13.0",
     "react": "18.2.0",
-    "react-native": "0.74.1"
+    "react-native": "0.74.1",
+    "react-native-blob-util": "^0.19.9",
+    "react-native-device-info": "^11.1.0",
+    "react-native-fast-image": "^8.6.3",
+    "react-native-gesture-handler": "^2.16.2",
+    "react-native-haptic-feedback": "^2.2.0",
+    "react-native-image-picker": "^7.1.2",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-mmkv": "^2.12.2",
+    "react-native-reanimated": "^3.11.0",
+    "react-native-safe-area-context": "^4.10.3",
+    "react-native-screens": "^3.31.1",
+    "react-native-skeleton-placeholder": "^5.2.4",
+    "react-native-svg": "^15.3.0",
+    "react-native-webview": "^13.10.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
